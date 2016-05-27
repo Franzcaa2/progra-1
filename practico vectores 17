@@ -1,0 +1,36 @@
+// Fibonacci.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define max 100
+
+using namespace std;
+
+void main()
+{	double vec[max];
+	int n,p=1,k=0,j,i,m=0,g=1;
+	cout<<"ingrese el numero hasta el que sera la serie: ";
+	cin>>n;
+	i=1;
+	j=1;
+
+	while( i<=n)
+	{
+		vec[m]=p;
+		p=p+i;
+		k=k+j;
+		i=i+p;
+		j=j+k;
+		vec[g]=k;
+		m=m+2;
+		g=g+2;
+	}
+
+	for(int i=0;i<g-1;i++)
+	{
+		cout<<"vec["<<i<<"]"<<vec[i]<<endl;
+	}
+	getch();
+}
