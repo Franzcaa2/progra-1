@@ -1,0 +1,44 @@
+// practico vectores.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+#define max 100
+
+void x(double y[], int z);
+double mayor(double y[], int z);
+using namespace std;
+
+void main()
+{
+	int n,may;
+	double a[max];
+	cout<<"Introdusca el numero de vectores: ";
+	cin>>n;
+	x(a,n);
+	may=mayor(a,n);
+	cout<<"el menor numero es: "<<may<<endl;
+	getch();
+
+}
+void x(double y[], int z)
+{
+	for(int i=0;i<z;i++)
+	{
+		cout<<"ingrese el numero y["<<i<<"]:";
+		cin>>y[i];
+	}
+}
+double mayor(double y[], int z)
+{
+	int menor=y[0];
+	for(int i=0;i<z;i++)
+	{
+		if(menor>y[i])
+			menor=y[i];
+
+	}
+	return menor;
+}
