@@ -1,0 +1,81 @@
+// ijhg.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+#define gen 100
+
+using namespace std;
+
+void cargar (double a[], int tam);
+void invertir (double a[], int tam);
+void mostrar (double a[], double b[],int tam);
+double comparar (double a[], double b[],int tam);
+
+void main ()
+{
+	double vec[MAX],vec2[gen];
+	int tam,n,es;
+	do
+	{
+		cout<<"Ingrese el numero de elementos del vector: ";
+		cin>>n;
+	}while ((0>=n)||(n>MAX));
+	cargar (vec,n);
+	invertir (vec,n);
+	mostrar (vec,vec2,n);
+	invertir (vec,n);
+	es=comparar(vec,vec2,n);
+	if(es==2)
+		cout<<"capicua"<<endl;
+	else
+		cout<<"no es capicua"<<endl;
+
+	getch();
+}
+
+void cargar (double a[], int tam)
+{
+	for(int i=0;i<tam;i++)
+	{   
+		do{
+			cout<<"a["<<i<<"]= ";
+			cin>> a[i];
+		}while (a[i]<0);
+	}
+}
+
+void invertir (double a[], int tam)
+{
+	for (int i=0 ; i < (tam/2) ; i++)
+	{
+		int temp = a[i];
+		a[i] = a[tam-i-1];
+		a[tam-i-1] = temp;
+
+	}
+}
+void mostrar ( double a[], double b[],int tam)
+{
+	cout<<"El vector invertido es: "<<endl;
+	for(int i=0;i<tam;i++)
+		{	
+			b[i]=a[i];
+			cout<<"b["<<i<<"]= "<<b[i]<<endl;
+		
+	}
+	getch();
+}
+double comparar ( double a[], double b[],int tam)
+{int de;
+	for(int i=0;i<tam;i++)
+	{
+		if(a[i]!=b[i])
+			de=1;
+		else
+			de=2;
+	}
+	return de;
+}
