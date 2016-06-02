@@ -1,0 +1,50 @@
+//////Validacion de enetro//////////
+
+int validarnumeroentero (){
+	 int numero;
+    while (!(cin >> numero) )
+    {
+        cout << "\nIngrese numero de nuevo:  ";
+        cin.clear();
+        fflush(stdin);
+    }
+   
+	return(numero);
+}
+
+
+
+float validarnumeroflotantenonegativo (){
+	 float numero;
+    while (!(cin >> numero) )
+    {
+        cout << "\nIngrese numero de nuevo:  ";
+        cin.clear();
+        fflush(stdin);
+    }
+   
+	return(numero);
+}
+
+
+
+
+
+//////COMO USAR////////////
+do{
+		cout << "\n Introducir ID del cliente: ";
+		reg.idcliente = validarnumeroentero ();
+	}while(verifexisteidcliente(reg.idcliente)==true);
+
+float validarnumeroflotante (){
+	 float numero;
+    while (!(cin >> numero) )
+    {
+        cout << "\nIngrese numero de nuevo:  ";
+        cin.clear();
+        fflush(stdin);
+    }
+   
+	return(numero);
+}
+
